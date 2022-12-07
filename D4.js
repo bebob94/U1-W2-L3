@@ -197,8 +197,7 @@ let totmass= 0
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
   const mass = starWarsCharacters[i].mass;
-  totmass= totmass + mass
-  console.log(totmass);
+  totmass= totmass + parseInt(mass)
 }
 console.log(totmass);
 /* ESERCIZIO 7
@@ -214,23 +213,43 @@ Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: Jump
 
 Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
+console.log("/n-------------------------esercizio7-----------------");
+switch (starWarsCharacters.mass) {
+  case mass<500 :
+    console.log("Ship is under loaded");
+    break;
+    case mass===500 :
+      console.log("Ship is half loaded");
+      break;
+      case mass>700 && mass<900 :
+    console.log("Warning: Load is over 700");
+    break;
+    case mass>900 && mass<1000 :
+    console.log("Critical Load: Over 900");
+    break;
+  default:
+    console.log("DANGER! OVERLOAD ALERT: Jump ship now!");
+    break;
+}
 
 /* ESERCIZIO 8
 
 Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
 */
-
+console.log("/n-------------------------esercizio8-----------------");
 /* EXTRA ESERCIZIO 9
 
 Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
 Usa uno più for loop per raggiungere il risultato
 
+
 (tip: cerca un metodo degli array per rimuovere un elemento)
 
 Una volta fatto, crea un console.log() per controllare la proprietà length di "characters" prima e dopo l'operazione
 */
-
+console.log("/n-------------------------esercizio9-----------------");
 /* EXTRA ESERCIZIO 10
 
 Crea una funzionalità che prenda un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo
 */
+console.log("/n-------------------------esercizio10-----------------");
