@@ -157,7 +157,7 @@ const eyeColor={
   yellow:[], 
   brown:[],
   red:[],
-  "blue-gray":[]
+  blue_gray:[]
 }
 
 console.log(eyeColor);
@@ -170,7 +170,7 @@ console.log("/n-------------------------esercizio5-----------------");
 for (let i = 0; i < starWarsCharacters.length; i++) {
   const object = starWarsCharacters[i];
   
-  switch (starWarsCharacters.eye_color) {
+  switch (starWarsCharacters[i].eye_color) {
     case "blue":
       eyeColor.blue.push(object)
       break;
@@ -181,7 +181,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
       eyeColor.brown.push(object)
       break;
       case "blue-gray":
-      eyeColor.blue-gray.push(object)
+      eyeColor.blue_gray.push(object)
       break;
       default:
   }
@@ -191,7 +191,7 @@ console.log(eyeColor);
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
 */
-console.log("/n-------------------------esercizio5-----------------");
+console.log("/n-------------------------esercizio6-----------------");
 
 let totmass= 0
 
@@ -214,17 +214,19 @@ Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: Jump
 Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
 console.log("/n-------------------------esercizio7-----------------");
-switch (starWarsCharacters.mass) {
-  case mass<500 :
+
+
+switch (parseInt(starWarsCharacters[2].mass)) {
+  case starWarsCharacters.mass<500 :
     console.log("Ship is under loaded");
     break;
-    case mass===500 :
+    case starWarsCharacters.mass===500 :
       console.log("Ship is half loaded");
       break;
-      case mass>700 && mass<900 :
+      case starWarsCharacters.mass>700 && starWarsCharacters.mass<900 :
     console.log("Warning: Load is over 700");
     break;
-    case mass>900 && mass<1000 :
+    case starWarsCharacters.mass>900 && starWarsCharacters.mass<1000 :
     console.log("Critical Load: Over 900");
     break;
   default:
@@ -237,6 +239,11 @@ switch (starWarsCharacters.mass) {
 Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
 */
 console.log("/n-------------------------esercizio8-----------------");
+
+// for (let index = 0; index < array.length; index++) {
+//   const element = array[index];
+  
+// }
 /* EXTRA ESERCIZIO 9
 
 Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
