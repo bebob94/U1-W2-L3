@@ -22,7 +22,7 @@ const starWarsCharacters = [
   {
     name: "R2-D2",
     height: "96",
-    mass: "740",
+    mass: "32",
     hair_color: "n/a",
     skin_color: "white, blue",
     eye_color: "red",
@@ -107,6 +107,8 @@ Crea una variabile chiamata "c" e inserisci un array vuoto
 console.log("/n-------------------------esercizio1-----------------");
 
 const Characters=[]
+
+console.log(Characters);
 /* ESERCIZIO 2
 Usando un for loop, cicla l'array "starWarsCharacters" ed accedi alla proprietà "name". 
 Usa il valore contenuto inserendolo nell'array creato precedentemente. 
@@ -201,9 +203,15 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 }
 console.log(totmass);
 
-// while (starWarsCharacters.length=0) {
-  
-// }
+let ind= 0
+let tot2Mass= 0
+while (ind< starWarsCharacters.length) {
+  const mass = starWarsCharacters[ind].mass;
+  tot2Mass = tot2Mass + parseInt(mass)
+  ind++
+}
+
+console.log(tot2Mass);
 /* ESERCIZIO 7
 
 Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
@@ -219,27 +227,27 @@ Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se
 */
 console.log("/n-------------------------esercizio7-----------------");
 
-let totalmass= parseInt(starWarsCharacters[2].mass)
+const totalmass= 400
 console.log(totalmass);
 
-switch (totalmass) {
+switch (true) {
   case totalmass < 500 :
-    console.log("Ship is under loaded");
-    break;
-    case totalmass === 500 :
-      console.log("Ship is half loaded");
-      break;
-      case totalmass > 700 :
-    console.log("Warning: Load is over 700");
-    break;
-    case totalmass > 900 :
-    console.log("Critical Load: Over 900");
-    break;
+  console.log("Ship is under loaded");
+  break;
+  case totalmass>= 500 && totalmass < 700:
+  console.log("Ship is half loaded");
+  break;
+  case totalmass>= 700 && totalmass < 900 :
+  console.log("Warning: Load is over 700");
+  break;
+  case totalmass>= 900 && totalmass< 1000 :
+  console.log("Critical Load: Over 900");
+  break;
+  case totalmass> 1000:
+  console.log("DANGER! OVERLOAD ALERT: Jump ship now!");
   default:
-    console.log("DANGER! OVERLOAD ALERT: Jump ship now!");
-    break;
 }
-
+          
 /* ESERCIZIO 8
 
 Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
@@ -275,15 +283,18 @@ console.log("Prima ", Characters.length);
 for (let i = 0; i < Characters.length; i++) {
   const name = Characters[i].name;
 
-  for (let i = 0; i < femaleCharacters.length; i++) {
-    const femaleName = femaleCharacters[i].name;
+  for (let index = 0; index < femaleCharacters.length; index++) {
+    const femaleName = femaleCharacters[index].name;
 
     if (name === femaleName) {
+      console.log(name);
+      console.log(femaleName);
       Characters.splice(i,1)
     }
   }
 }
 
+console.log("Dopo ", Characters);
 console.log("Dopo ", Characters.length);
 
 
