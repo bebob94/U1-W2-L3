@@ -200,6 +200,10 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   totmass= totmass + parseInt(mass)
 }
 console.log(totmass);
+
+// while (starWarsCharacters.length=0) {
+  
+// }
 /* ESERCIZIO 7
 
 Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
@@ -275,7 +279,7 @@ for (let i = 0; i < Characters.length; i++) {
     const femaleName = femaleCharacters[i].name;
 
     if (name === femaleName) {
-      delete Characters[i].name
+      Characters.splice(i,1)
     }
   }
 }
