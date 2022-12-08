@@ -22,7 +22,7 @@ const starWarsCharacters = [
   {
     name: "R2-D2",
     height: "96",
-    mass: "32",
+    mass: "740",
     hair_color: "n/a",
     skin_color: "white, blue",
     eye_color: "red",
@@ -112,7 +112,7 @@ Usando un for loop, cicla l'array "starWarsCharacters" ed accedi alla proprietà
 Usa il valore contenuto inserendolo nell'array creato precedentemente. 
 Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
-console.log("/n-------------------------esercizio3-----------------");
+console.log("/n-------------------------esercizio2-----------------");
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
   const name = starWarsCharacters[i].name;
@@ -215,18 +215,20 @@ Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se
 */
 console.log("/n-------------------------esercizio7-----------------");
 
+let totalmass= parseInt(starWarsCharacters[2].mass)
+console.log(totalmass);
 
-switch (parseInt(starWarsCharacters[2].mass)) {
-  case starWarsCharacters.mass<500 :
+switch (totalmass) {
+  case totalmass < 500 :
     console.log("Ship is under loaded");
     break;
-    case starWarsCharacters.mass===500 :
+    case totalmass === 500 :
       console.log("Ship is half loaded");
       break;
-      case starWarsCharacters.mass>700 && starWarsCharacters.mass<900 :
+      case totalmass > 700 :
     console.log("Warning: Load is over 700");
     break;
-    case starWarsCharacters.mass>900 && starWarsCharacters.mass<1000 :
+    case totalmass > 900 :
     console.log("Critical Load: Over 900");
     break;
   default:
@@ -240,10 +242,18 @@ Usa un for loop per cambiare il valore della proprietà "gender" di alcuni perso
 */
 console.log("/n-------------------------esercizio8-----------------");
 
-// for (let index = 0; index < array.length; index++) {
-//   const element = array[index];
-  
-// }
+
+const newGender= "robot"
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "n/a") {
+
+    starWarsCharacters[i].gender = newGender
+  }
+}
+
+console.log(starWarsCharacters);
+
 /* EXTRA ESERCIZIO 9
 
 Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
@@ -255,8 +265,37 @@ Usa uno più for loop per raggiungere il risultato
 Una volta fatto, crea un console.log() per controllare la proprietà length di "characters" prima e dopo l'operazione
 */
 console.log("/n-------------------------esercizio9-----------------");
+
+console.log("Prima ", Characters.length);
+
+for (let i = 0; i < Characters.length; i++) {
+  const name = Characters[i].name;
+
+  for (let i = 0; i < femaleCharacters.length; i++) {
+    const femaleName = femaleCharacters[i].name;
+
+    if (name === femaleName) {
+      delete Characters[i].name
+    }
+  }
+}
+
+console.log("Dopo ", Characters.length);
+
+
 /* EXTRA ESERCIZIO 10
 
 Crea una funzionalità che prenda un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo
 */
 console.log("/n-------------------------esercizio10-----------------");
+
+const indice = 6
+
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const object = i;
+  if (object === indice) {
+    console.log("Il mio nome è ", starWarsCharacters[i].name, ", sono alto ", starWarsCharacters[i].height, " cm", ", peso esattamente ", starWarsCharacters[i].mass," kg", ", ho i capelli ", starWarsCharacters[i].hair_color, ", scusate sono abituato a parlare in inglese",", sono di colore ", starWarsCharacters[i].skin_color, ", hem scusate",", ho gli occhi ", starWarsCharacters[i].eye_color, ", di nuovo scusate",", sono nato nell'anno ", starWarsCharacters[i].birth_year, "e sono di genere ", starWarsCharacters[i].gender, " basta giuro che non sbaglio più");
+  }
+  
+}
